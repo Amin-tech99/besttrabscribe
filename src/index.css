@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', 'SF Pro Display', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-primary-50 text-primary-900;
+    margin: 0;
+    padding: 0;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  /* Custom scrollbar for webkit browsers */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-100;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-400;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-accent-green text-white font-medium py-3 px-6 rounded-card min-h-touch flex items-center justify-center transition-all duration-200 hover:bg-opacity-90 active:scale-95 shadow-card;
+  }
+
+  .btn-secondary {
+    @apply bg-white text-primary-900 font-medium py-3 px-6 rounded-card min-h-touch flex items-center justify-center transition-all duration-200 hover:bg-gray-50 active:scale-95 shadow-card border border-gray-200;
+  }
+
+  .btn-danger {
+    @apply bg-accent-amber text-white font-medium py-3 px-6 rounded-card min-h-touch flex items-center justify-center transition-all duration-200 hover:bg-opacity-90 active:scale-95 shadow-card;
+  }
+
+  .card {
+    @apply bg-white rounded-card shadow-card p-6 transition-all duration-200 hover:shadow-card-hover;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 rounded-card border border-gray-200 focus:border-accent-green focus:ring-2 focus:ring-accent-green focus:ring-opacity-20 transition-all duration-200 min-h-touch;
+  }
+
+  .status-badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium;
+  }
+
+  .status-completed {
+    @apply bg-accent-green bg-opacity-10 text-accent-green;
+  }
+
+  .status-progress {
+    @apply bg-accent-blue bg-opacity-10 text-accent-blue;
+  }
+
+  .status-pending {
+    @apply bg-gray-200 text-gray-600;
+  }
+
+  .status-returned {
+    @apply bg-accent-amber bg-opacity-10 text-accent-amber;
+  }
+}
+
+@layer utilities {
+  .safe-area-top {
+    padding-top: env(safe-area-inset-top);
+  }
+
+  .safe-area-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .touch-target {
+    @apply min-h-touch min-w-touch;
+  }
+}
