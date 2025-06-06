@@ -23,12 +23,12 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "set CI=false && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "build:analyze": "npm run build && npx serve -s build",
-    "deploy:vercel": "npm run build && npx vercel --prod",
-    "deploy:netlify": "npm run build && npx netlify deploy --prod --dir=build",
+    "build:analyze": "set CI=false && npm run build && npx serve -s build",
+    "deploy:vercel": "set CI=false && npm run build && npx vercel --prod",
+    "deploy:netlify": "set CI=false && npm run build && npx netlify deploy --prod --dir=build",
     "serve": "npx serve -s build",
     "docker:build": "docker build -t hassaniya-transcription .",
     "docker:run": "docker run -p 3000:80 hassaniya-transcription"

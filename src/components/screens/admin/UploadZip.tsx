@@ -7,13 +7,12 @@ import {
   UserIcon,
   FolderIcon
 } from '@heroicons/react/24/outline';
-import { useAuth } from '../../../contexts/AuthContext';
 import { useApp } from '../../../contexts/AppContext';
 import { motion, AnimatePresence } from 'framer-motion';
 import { UploadProgress } from '../../../types';
 
 export const UploadZip: React.FC = () => {
-  const { user } = useAuth();
+  // Removed unused user variable
   const { users } = useApp();
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [assignedWorker, setAssignedWorker] = useState('');
